@@ -87,6 +87,14 @@ func (d1 *Decimal) Equal(d2 *Decimal) bool {
 	return false
 }
 
+func (d1 *Decimal) NotEqual(d2 *Decimal) bool {
+	if d1.Dec.Cmp(&d2.Dec) != 0 {
+		return true
+	}
+
+	return false
+}
+
 func (d1 *Decimal) Sub(d2 *Decimal, d3 *Decimal) *Decimal {
 	d1.Dec.Sub(&d2.Dec, &d3.Dec)
 	return d1
