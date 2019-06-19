@@ -43,6 +43,12 @@ func (d *Decimal) SetUnscaled(n int64) *Decimal {
 	return d
 }
 
+func (d1 *Decimal) Abs(d2 *Decimal) *Decimal {
+	nd := new(Decimal)
+	nd.Dec = *nd.Dec.Abs(&d2.Dec)
+	return nd
+}
+
 func (d1 *Decimal) Cmp(d2 *Decimal) int {
 	return d1.Dec.Cmp(&d2.Dec)
 }
