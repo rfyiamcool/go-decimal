@@ -101,16 +101,19 @@ func (d1 *Decimal) NotEqual(d2 *Decimal) bool {
 	return false
 }
 
+// d1 = d2 - d3
 func (d1 *Decimal) Sub(d2 *Decimal, d3 *Decimal) *Decimal {
 	d1.Dec.Sub(&d2.Dec, &d3.Dec)
 	return d1
 }
 
+// d1 = d2 + d3
 func (d1 *Decimal) Add(d2 *Decimal, d3 *Decimal) *Decimal {
 	d1.Dec.Add(&d2.Dec, &d3.Dec)
 	return d1
 }
 
+// d1 = d2 * d3
 func (d1 *Decimal) Mul(d2 *Decimal, d3 *Decimal) *Decimal {
 	d1.Dec.Mul(&d2.Dec, &d3.Dec)
 	return d1
@@ -138,11 +141,13 @@ func (d1 *Decimal) CanDivExact(d2 *Decimal) bool {
 	return true
 }
 
-func (d1 *Decimal) QuoRoundFloor(x, y, min *Decimal) *Decimal {
-	d1.Dec.QuoRound(&x.Dec, &y.Dec, min.Scale(), inf.RoundFloor)
+// d1 = x / y
+func (d1 *Decimal) QuoRoundFloor(x, y, precision *Decimal) *Decimal {
+	d1.Dec.QuoRound(&x.Dec, &y.Dec, precision.Scale(), inf.RoundFloor)
 	return d1
 }
 
+// precision
 func (d1 *Decimal) RoundFloor(x, base *Decimal) *Decimal {
 	d1.Dec.Round(&x.Dec, base.Scale(), inf.RoundFloor)
 	return d1

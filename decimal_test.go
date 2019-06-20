@@ -1,10 +1,3 @@
-# go-decimal
-
-golang easy decimal lib
-
-## usage:
-
-```
 package decimal
 
 import (
@@ -34,9 +27,9 @@ func TestMulQuo(t *testing.T) {
 	var (
 		balance       = NewDecimalFromInt64(88)
 		const2Decimal = NewDecimalFromInt64(2)
-		res = NewDecimalFromInt64(44)
-
 		minPre        = NewDecimalFromInt64(1)
+
+		res = NewDecimalFromInt64(44)
 	)
 
 	assert.Equal(t,
@@ -73,4 +66,3 @@ func TestPrecision(t *testing.T) {
 		new(Decimal).RoundFloor(source, prec),
 	)
 }
-```
