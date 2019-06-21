@@ -2,6 +2,8 @@
 
 golang easy decimal lib
 
+`inf module copy from gopkg.in/inf.v0`
+
 ## usage:
 
 ```

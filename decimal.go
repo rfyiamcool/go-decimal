@@ -1,7 +1,7 @@
 package decimal
 
 import (
-	inf "gopkg.in/inf.v0"
+	"github.com/rfyiamcool/go-decimal/inf"
 )
 
 type Decimal struct {
@@ -15,6 +15,10 @@ func DecimalComparator(a, b interface{}) int {
 	an := a.(*Decimal)
 	bn := b.(*Decimal)
 	return an.Cmp(bn)
+}
+
+func NewDecimal() *Decimal {
+	return new(Decimal)
 }
 
 func NewDecimalFromString(s string) (*Decimal, bool) {
